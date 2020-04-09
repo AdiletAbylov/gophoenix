@@ -32,6 +32,7 @@ func (st *socketTransport) Connect(url string, mr MessageReceiver, cr Connection
 }
 
 func (st *socketTransport) Push(data interface{}) error {
+	
 	return st.socket.WriteJSON(data)
 }
 
