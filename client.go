@@ -26,7 +26,7 @@ func (c *Client) Connect(url string) error {
 	}
 
 	mr := newMessageRouter()
-
+	c.mr = mr
 	return c.t.Connect(url, mr, c.cr)
 }
 
