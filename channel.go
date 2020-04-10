@@ -61,10 +61,12 @@ func (ch *Channel) sendMessage(ref int64, event Event, payload interface{}) erro
 	}
 
 	data, err := json.Marshal(msg)
-	fmt.Printf("sekcet message ", data)
+
+
 	if err != nil {
 		return fmt.Errorf("unable to marshal message: %s", err)
 	}
+	fmt.Println("socket message ", string(data))
 
 	return ch.t.Push(data)
 }
